@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+
+{% block content %}
+	<h1>Welcome, {{username}}</h1>
+    {% for post in user_posts %}
+        <div>
+            {{post.subject}}
+            <a href="/edit/{{post.key().id()}}">Edit</a>
+            <a href="/delete/{{post.key().id()}}">Delete</a>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1>Edit Your Blog Post</h1>
+    <form method="post">
+        <div name="user">
+            {{user}}
+        </div>
+
+        <label>
+            <div>Subject</div>
+            <input name="subject" type="text" value="{{subject}}">
+        </label>
+
+        <label>
+            <div>Content</div>
+            <textarea name="content">{{content}}</textarea>
+        </label>
+
+        <div>
+            <input type="submit">
+            <a href="/">Cancel</a>
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

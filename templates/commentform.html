@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1>Create A Comment</h1>
+    <form method="post">
+        <label>
+            <div>{{subject}}</div>
+        </label>
+
+        <label>
+            <div>{{content}}</div>
+        </label>
+
+        <div>
+            <div>Comment</div>
+            <textarea name="comment"></textarea>
+        </div>
+
+        <div>
+            <input type="submit">
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

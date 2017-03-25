@@ -1,0 +1,36 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div>
+        <h3>{{post.subject}}</h3>
+    </div>
+
+    <hr>
+    <div>
+        {{post.content}}
+    </div>
+
+    <div>
+        {{error}}
+    </div>
+    <br>
+
+    {% for comment in comments %}
+        <div>
+            {{comment.username}}
+        </div>
+
+        <div>
+            {{comment.comment}}
+        </div>
+
+        <div>
+            <a href="/commentedit/{{comment.key().id()}}">Edit</a>
+            <a href="/commentdelete/{{comment.key().id()}}">Delete</a>
+        </div>
+        <br>
+    {% endfor %}
+    <div>
+        <a href="/comment/{{post.key().id()}}">Add a Comment</a>
+    </div>
+{% endblock %}

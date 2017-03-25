@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1>Login Form</h1>
+
+    <form method="post">
+        <label>
+            <div>Username</div>
+            <input name="username" type="text" value={{username}}>
+        </label>
+
+        <label>
+            <div>Password</div>
+            <input name="password" type="password">
+        </label>
+
+        <div>
+            <input type="submit">
+        </div>
+
+        <div>
+            <a href="/register">Click Here To Register</a>
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1>Registration Form</h1>
+
+    <form method="post">
+        <label>
+            <div>Username</div>
+            <input name="username" type="text" value={{username}}>
+        </label>
+
+        <label>
+            <div>Password</div>
+            <input name="password" type="password">
+        </label>
+
+        <label>
+            <div>Retype Password</div>
+            <input name="verify" type="password">
+        </label>
+
+        <label>
+            <div>Email (optional)</div>
+            <input name="email" type="text" value={{email}}>
+        </label>
+
+        <div>
+            <input type="submit">
+        </div>
+
+        <div>
+            <a href="/signin">Click Here If Already Registered</a>
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div>
+        {% if account == "Logout": %}
+            <a href="/logout">Logout</a>
+        {% else: %}
+            <a href="/signin">Sign In</a>
+        {% endif %}
+    </div>
+
+    <div class="error">
+        {{error}}
+    </div>
+    <div>
+        <a href="/newpost">Create A New Post</a>
+    </div>
+    {% for post in posts %}
+        <div>
+            <h3>{{post.subject}}</h3>
+        </div>
+
+        <hr>
+        <div>
+            {{post.content}}
+        </div>
+
+        <hr>
+        <div>
+            <a href="/edit/{{post.key().id()}}">Edit</a>
+            <a href="/delete/{{post.key().id()}}">Delete</a>
+            <a href="/like/{{post.key().id()}}">Likes</a>
+            {{post.likes}}
+            <a href="/unlike/{{post.key().id()}}">Unlikes</a>
+            {{post.unlikes}}
+            <a href="/{{post.key().id()}}">Comment</a>
+        </div>
+
+        <br>
+    {% endfor %}
+{% endblock %}
